@@ -190,4 +190,77 @@
     }
   }
   // our doctor section ended here
+  // latest news section started here
+  .latest-news {
+    background-color: $yellowish;
+
+    .wrapper--news { width: 56%; }
+
+    .main-heading--capitalize {
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    &__card {
+      margin-top: 40px;
+      @include flexBox(flex);
+
+      &_list {
+        margin-right: 11%;
+        @include flexBasis(25.5%);
+        box-shadow: 0 2px 6px $shadow-color;
+        @include transition(all .3s ease);
+
+        &_image {
+          position: relative;
+
+          &_caption {
+            padding: 4px 6px;
+            border-radius: 25px;
+            position: absolute;
+            top: 12px;
+            left: 8%;
+            background-color: $tertiary-color;
+            color: $white;
+            @include fontProperty(null, 9px);
+          }
+        }
+
+        &_content {
+          padding: 12px;
+
+          &_info {
+            margin-top: 8px;
+            @include flexBox(flex, null, center);
+
+            &_image {
+              width: 20px;
+              margin-right: 2%;
+
+              & img { border-radius: 50%; }
+            }
+
+            &_name {
+              margin-right: 2%;
+              font-size: 9px;
+            }
+
+            &_date { font-size: 9px; }
+          }
+        }
+
+        &:nth-child(3n) { margin-right: 0; }
+
+        @include reverseResponsive($hover) {
+          &:hover { box-shadow: 0 2px 6px $shadow-hover; }
+        }
+      }
+    }
+
+    &__cta {
+      padding: 24px 0 57px;
+      text-align: center;
+    }
+  }
+  // latest news section ended here
 }
