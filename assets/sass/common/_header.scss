@@ -24,6 +24,7 @@
         color: $text-color;
         display: block;
         @include fontProperty(null, 10px);
+        @include transition(all .3s ease);
 
         &::before {
           margin-right: 3%;
@@ -34,6 +35,12 @@
 
         &--tel::before { content: '\f095'; }
         &--mail::before { content: '\f0e0'; }
+
+        @include reverseResponsive($hover) {
+          &:hover {
+            color: $primary-color;
+          }
+        }
       }
     }
   }
@@ -46,11 +53,12 @@
       margin: 0 1.5% 0 3%;
 
       &_link {
+        color: $text-color;
         @include fontProperty(null, 10px);
         text-indent: -9999px;
+        @include transition(all .3s ease);
 
         &::before {
-          color: $text-color;
           @include fontProperty('Font Awesome 5 Brands');
           float: left;
           text-indent: 0;
@@ -60,6 +68,12 @@
         &--twitter::before { content: '\f099'; }
         &--dribbble::before { content: '\f17d'; }
         &--instagram::before { content: '\f16d'; }
+
+        @include reverseResponsive($hover) {
+          &:hover {
+            color: $primary-color;
+          }
+        }
       }
     }
   }
@@ -78,6 +92,13 @@
         color: $black;
         @include fontProperty(null, 14px, null, 700);
         text-transform: capitalize;
+        @include transition(all .3s ease);
+
+        &_color { color: $primary-color; }
+
+        @include reverseResponsive($hover) {
+          &:hover { color: $primary-color; }
+        }
       }
     }
 
@@ -95,12 +116,20 @@
         color: $primary-color;
         @include fontProperty(null, 11px);
         text-indent: -9999px;
+        @include transition(all .3s ease);
 
         &::before {
           content: '\f002';
           @include fontProperty('FontAwesome');
           float: left;
           text-indent: 0;
+        }
+        
+        @include reverseResponsive($hover) {
+          &:hover {
+            background-color: $primary-color;
+            color: $white;
+          }
         }
       }
 
@@ -132,6 +161,10 @@
           &_link {
             color: $text-color;
             @include fontProperty(null, 12px);
+            @include transition(all .3s ease);
+
+            &--active { color: $primary-color; }
+            @include reverseResponsive($hover) { &:hover { color: $primary-color; } }
           }
         }
       }
@@ -145,6 +178,9 @@
         color: $white;
         @include fontProperty(null, 10px);
         text-transform: capitalize;
+        @include transition(all .3s ease);
+
+        @include reverseResponsive($hover) { &:hover { background-color: $primary-dark; } }
       }
     }
   }

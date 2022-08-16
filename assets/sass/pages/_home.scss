@@ -1,0 +1,100 @@
+.home {
+  // banner section started here
+  .banner {
+    .wrapper {
+      width: 100%;
+      position: relative;
+    }
+
+    &__image {
+      position: absolute;
+    }
+
+    &__content {
+      width: 60%;
+      padding: 70px 0;
+      margin: 0 auto;
+      @include transform(translate(0));
+      text-align: center;
+
+      &_tag_line {
+        margin-top: 66px;
+        color: $white;
+        @include fontProperty(null, 14px);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      &_heading {
+        margin-top: 3px;
+        color: $white;
+        @include fontProperty(null, 36px);
+      }
+
+      .connect__cta {
+        padding: 8px 18px;
+        margin-top: 24px;
+        border-radius: 4px;
+        background-color: $primary-color;
+        color: $white;
+        @include fontProperty(null, 12px);
+        text-transform: capitalize;
+        @include transition(all .3s ease);
+      
+        @include reverseResponsive($hover) {
+          &:hover {
+            background-color: $primary-dark;
+          }
+        }
+      }
+    }
+
+    &__card {
+      width: 60%;
+      margin: 40px auto;
+      @include flexBox(flex, null, center);
+      @include transform(translate(0));
+
+      &_list {
+        border-radius: 4px;
+        margin-right: 10.7%;
+        @include flexBasis(23.5%);
+        background-color: $white;
+        box-shadow: 0 2px 6px $shadow-color;
+
+        &_link {
+          padding: 14px;
+          @include flexBox(flex, null, center);
+          color: $text-color;
+          @include fontProperty(null, 14px);
+
+          &::before {
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 15%;
+            color: $white;
+            @include fontProperty('FontAwesome', 24px);
+            float: left;
+          }
+        }
+
+        &:nth-child(1) .banner__card_list_link::before {
+          content: '\f086';
+          background-color: $primary-color;
+        }
+
+        &:nth-child(2) .banner__card_list_link::before {
+          content: '\f132';
+          padding: 10px 13px;
+          background-color: $tertiary-color;
+        }
+
+        &:nth-child(3) .banner__card_list_link::before {
+          content: '\f290';
+          background-color: $pink;
+        }
+      }
+    }
+  }
+  // banner section ended here
+}
