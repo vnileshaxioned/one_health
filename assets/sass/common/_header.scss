@@ -1,0 +1,151 @@
+.wrapper--header { width: 100%; }
+
+.header__top {
+  padding: 2px 20% 6px;
+  border-bottom: 1px solid $border-color;
+  @include flexBox(flex, null, center, null, null, space-between);
+
+  .contact-info {
+    @include flexBox(flex, null, center);
+    @include flexBasis(40%);
+
+    &__list {
+      padding: 0 1% 0 3%;
+      border-right: 1px solid $border-color;
+    @include flexBasis(34%);
+
+      &:first-child { padding-left: 0; }
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+
+      &_link {
+        color: $text-color;
+        display: block;
+        @include fontProperty(null, 10px);
+
+        &::before {
+          margin-right: 3%;
+          color: $primary-color;
+          @include fontProperty('FontAwesome', 11px);
+          float: left;
+        }
+
+        &--tel::before { content: '\f095'; }
+        &--mail::before { content: '\f0e0'; }
+      }
+    }
+  }
+
+  .header-social {
+    @include flexBox(flex, null, center, null, null, flex-end);
+    @include flexBasis(40%);
+
+    &__list {
+      margin: 0 1.5% 0 3%;
+
+      &_link {
+        @include fontProperty(null, 10px);
+        text-indent: -9999px;
+
+        &::before {
+          color: $text-color;
+          @include fontProperty('Font Awesome 5 Brands');
+          float: left;
+          text-indent: 0;
+        }
+
+        &--facebook::before { content: '\f39e'; }
+        &--twitter::before { content: '\f099'; }
+        &--dribbble::before { content: '\f17d'; }
+        &--instagram::before { content: '\f16d'; }
+      }
+    }
+  }
+}
+
+.header-bottom {
+  padding: 8px 20%;
+  @include flexBox(flex, null, center, null, null, space-between);
+
+  &__left {
+    @include flexBox(flex, null, center);
+    @include flexBasis(38%);
+
+    .logo {
+      &__link {
+        color: $black;
+        @include fontProperty(null, 14px, null, 700);
+        text-transform: capitalize;
+      }
+    }
+
+    .search {
+      margin-left: 4%;
+      @include flexBox(flex, null, center);
+      @include flexBasis(66%);
+
+      &__cta {
+        padding: 8px 8px;
+        border: 1px solid $border-color;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-right: none;
+        color: $primary-color;
+        @include fontProperty(null, 11px);
+        text-indent: -9999px;
+
+        &::before {
+          content: '\f002';
+          @include fontProperty('FontAwesome');
+          float: left;
+          text-indent: 0;
+        }
+      }
+
+      &__keyword {
+        padding: 7px 6%;
+        border: 1px solid $border-color;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        @include fontProperty(null, 12px);
+      }
+    }
+  }
+
+  &__right {
+    @include flexBox(flex, null, center, null, null, flex-end);
+    @include flexBasis(60%);
+
+    .hamburger { display: none; }
+
+    .navbar {
+      @include flexBasis(75%);
+
+      &__menu {
+        @include flexBox(flex, null, center, null, null, flex-end);
+
+        &_list {
+          margin-right: 6%;
+
+          &_link {
+            color: $text-color;
+            @include fontProperty(null, 12px);
+          }
+        }
+      }
+    }
+
+    .auth {
+      &__cta {
+        padding: 8px 18px;
+        border-radius: 4px;
+        background-color: $primary-color;
+        color: $white;
+        @include fontProperty(null, 10px);
+        text-transform: capitalize;
+      }
+    }
+  }
+}
