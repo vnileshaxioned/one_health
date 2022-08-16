@@ -263,4 +263,57 @@
     }
   }
   // latest news section ended here
+  // appointment section started here
+  .appointment {
+    .wrapper--appointment { width: 38%; }
+    .main-heading { text-align: center; }
+    .form {
+      padding-bottom: 56px;
+      margin-top: 40px;
+
+      &__container--top {
+        @include flexBox(flex, null, null, null, wrap, space-between);
+
+        .form__container_group {
+          @include flexBasis(48%);
+
+          &_content {
+            width: 91%;
+            padding: 9px 8px;
+            border: 1px solid $border-color;
+            margin-bottom: 10px;
+            @include fontProperty(null, 12px);
+
+            &--dropdown {
+              width: 100%;
+              background-color: $white;
+            }
+
+            &::placeholder { color: $text-color; }
+          }
+        }
+      }
+
+      &__container--bottom {
+        .form__container_group_content {
+          width: 96%;
+          border: 1px solid $border-color;
+          @include fontProperty(null, 12px);
+        }
+
+        .form__container_group_content--textarea {
+          width: 96.5%;
+          height: 100px;
+          border: 1px solid $border-color;
+          @include fontProperty(null, 12px);
+        }
+      }
+
+      &__container_cta {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+  // appointment section ended here
 }
