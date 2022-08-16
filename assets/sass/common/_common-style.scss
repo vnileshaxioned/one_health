@@ -19,3 +19,9 @@
   color: $heading-color;
   @include fontProperty(null, 28px);
 }
+
+.card_list_heading {
+  color: $heading-color;
+  @include fontProperty(null, 14px);
+  text-transform: capitalize;
+}

@@ -46,6 +46,7 @@
         @include flexBasis(23.5%);
         background-color: $white;
         box-shadow: 0 2px 6px $shadow-color;
+        @include transition(all .3s ease);
 
         &_link {
           padding: 14px;
@@ -80,6 +81,10 @@
         }
 
         &:last-child { margin-right: 0; }
+
+        @include reverseResponsive($hover) {
+          &:hover { box-shadow: 0 2px 6px $shadow-hover; }
+        }
       }
     }
   }
@@ -109,4 +114,80 @@
     }
   }
   // health center section ended here
+  // our doctor section started here
+  .our-doctor {
+    .wrapper--doctor { width: 53%; }
+
+    .main-heading--capitalize {
+      padding-top: 56px;
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    &__card {
+      margin-top: 44px;
+      @include flexBox(flex, null, null, null, wrap);
+
+      &_list {
+        margin-right: 13%;
+        box-shadow: 0 2px 6px $shadow-color;
+        @include transition(all .3s ease);
+
+        &_content { padding: 10px 7%; }
+
+        &_position {
+          padding: 3px 0;
+          color: $text-color;
+          @include fontProperty(null, 10px);
+          text-transform: capitalize;
+        }
+
+        &:nth-child(3n) { margin-right: 0; }
+
+        @include reverseResponsive($hover) {
+          &:hover { box-shadow: 0 2px 6px $shadow-hover; }
+        }
+      }
+    }
+
+    .slider-action {
+      padding-bottom: 60px;
+      margin-top: 26px;
+      @include flexBox(flex, null, null, null, null, center);
+
+      &__cta {
+        padding: 7px 1.5%;
+        background-color: $primary-color;
+        color: $white;
+        @include fontProperty(null, 10px);
+        text-indent: -9999px;
+        @include transition(all .3s ease);
+
+        &::before {
+          @include fontProperty('FontAwesome');
+          float: left;
+          text-indent: 0;
+        }
+
+        &--left {
+          border-top-left-radius: 25px;
+          border-bottom-left-radius: 25px;
+
+          &::before { content: '\f060'; }
+        }
+
+        &--right {
+          border-top-right-radius: 25px;
+          border-bottom-right-radius: 25px;
+
+          &::before { content: '\f061'; }
+        }
+
+        @include reverseResponsive($hover) {
+          &:hover { background-color: $primary-dark; }
+        }
+      }
+    }
+  }
+  // our doctor section ended here
 }
