@@ -31,22 +31,7 @@
         @include fontProperty(null, 36px);
       }
 
-      .connect__cta {
-        padding: 8px 18px;
-        margin-top: 24px;
-        border-radius: 4px;
-        background-color: $primary-color;
-        color: $white;
-        @include fontProperty(null, 12px);
-        text-transform: capitalize;
-        @include transition(all .3s ease);
-      
-        @include reverseResponsive($hover) {
-          &:hover {
-            background-color: $primary-dark;
-          }
-        }
-      }
+      .connect__cta { margin-top: 24px; }
     }
 
     &__card {
@@ -93,8 +78,35 @@
           content: '\f290';
           background-color: $pink;
         }
+
+        &:last-child { margin-right: 0; }
       }
     }
   }
   // banner section ended here
+  // health center section started here
+  .health-center {
+    .wrapper {
+      padding-top: 30px;
+      @include flexBox(flex);
+    }
+
+    &__left {
+      margin-right: 10%;
+      @include flexBasis(48%);
+
+      &_paragraph {
+        margin-top: 6px;
+        color: $text-color;
+        @include fontProperty(null, 11px, null, null, 1.5);
+      }
+
+      &_learn_more_cta { margin-top: 16px; }
+    }
+
+    &__right {
+      @include flexBasis(35%);
+    }
+  }
+  // health center section ended here
 }

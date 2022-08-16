@@ -1,0 +1,21 @@
+.similar-cta {
+  padding: 8px 18px;
+  border-radius: 4px;
+  background-color: $primary-color;
+  color: $white;
+  @include fontProperty(null, 12px);
+  text-transform: capitalize;
+  @include transition(all .3s ease);
+
+  @include reverseResponsive($hover) {
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+}
+
+.main-heading {
+  padding-top: 66px;
+  color: $heading-color;
+  @include fontProperty(null, 28px);
+}
